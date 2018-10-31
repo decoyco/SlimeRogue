@@ -8,7 +8,7 @@ using UnityEngine;
 //         these equip classes are meant to represent an object to be acted upon, not the action itself.
 
 public class Weapon : Equip {
-    public float dashSpeed;
+    //public float dashSpeed;
     private Vector3 relative_position;
     private Vector3 dashForce;
     private GameObject spawnedInstance;

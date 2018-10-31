@@ -101,6 +101,10 @@ public class Entity : MonoBehaviour
                 weaponInstance.transform.SetParent(transform);
                 //weaponInstance.SetActive(false);
             }
+            if (gameObject.layer == 9)
+                weaponInstance.layer = 8;
+            else if (gameObject.layer == 10)
+                weaponInstance.layer = 11;
         }
 
         if (secondEquip != null)
@@ -125,6 +129,10 @@ public class Entity : MonoBehaviour
                 secondWeaponInstance.transform.SetParent(transform);
                 //weaponInstance.SetActive(false);
             }
+            if (gameObject.layer == 9)
+                secondWeaponInstance.layer = 8;
+            else if (gameObject.layer == 10)
+                secondWeaponInstance.layer = 11;
         }
     }
 

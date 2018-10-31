@@ -300,7 +300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f288b11a4078a5040b0f6657b4b4e36f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfRooms: 10
+  numberOfRooms: 15
   floorTile: {fileID: 1268186056364570, guid: ff8b0d383eb245d4a9fdc9ef207f3b8b, type: 2}
   doorTile: {fileID: 1311203666202290, guid: b561634111086f640a5881f777f4d8ac, type: 2}
   stairTile: {fileID: 1284070281977090, guid: 6f8013bb2a51d17468c2da94247659ad, type: 2}

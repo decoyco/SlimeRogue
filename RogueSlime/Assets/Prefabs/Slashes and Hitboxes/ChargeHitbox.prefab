@@ -96,7 +96,6 @@ MonoBehaviour:
   slow: 0
   burn: 0
   parentObeject: {fileID: 0}
-  dashSpeed: 50
 --- !u!114 &114688093239524408
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -108,6 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae4d1ea68e8a68741bb68bfdd4129757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dashSpeed: 50
 --- !u!212 &212259348698359876
 SpriteRenderer:
   m_ObjectHideFlags: 1

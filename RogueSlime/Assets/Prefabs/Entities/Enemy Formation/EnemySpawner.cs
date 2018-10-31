@@ -87,7 +87,7 @@ public class EnemySpawner : MonoBehaviour {
             if (!child.gameObject.GetComponent<Position>().born)
             {
                 child.gameObject.GetComponent<Position>().born = true;
-                GameObject enemy = Instantiate(child.gameObject.GetComponent<Position>().enemy[Random.Range(0, child.gameObject.GetComponent<Position>().enemy.Length-1)], child.transform.position, Quaternion.identity) as GameObject;
+                GameObject enemy = Instantiate(child.gameObject.GetComponent<Position>().enemy[Random.Range(0, child.gameObject.GetComponent<Position>().enemy.Length)], child.transform.position, Quaternion.identity) as GameObject;
                 enemy.transform.parent = child;
             }
 		}
