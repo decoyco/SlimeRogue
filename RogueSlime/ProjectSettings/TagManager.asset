@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Slow
+  - Burn
+  - Drop
+  - Projectile
+  - Melee
+  - Wall
+  - HingeMelee
+  - Slash
+  - Clone
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Player Projectile
+  - Player
+  - Enemy
+  - Enemy Projectile
+  - Raycast
+  - Ignore Collisions
+  - CloneController
+  - EnemyFormation
+  - Map
+  - Hole
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Hole
+    uniqueID: 2920069653
+    locked: 0
+  - name: Projectile
+    uniqueID: 2110033757
+    locked: 0
+  - name: Entity
+    uniqueID: 1233404329
+    locked: 0
