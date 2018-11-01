@@ -363,7 +363,12 @@ public class LevelGeneration : MonoBehaviour
                 if(numDoors == 1)
                 {
                     preset = Instantiate(presets1[Random.Range(0, presets1.Length)], drawPos, Quaternion.identity);
-                    
+                    if(North)
+                        preset.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 180));
+                    else if(East)
+                        preset.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90));
+                    else if(West)
+                        preset.transform.rotation = Quaternion.Euler(new Vector3(0, 0, -90));
                 }
                 else if (numDoors == 2)
                 {

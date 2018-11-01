@@ -333,7 +333,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1386836539477790}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.007540405, y: -0.004483655, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4635030796313606}
@@ -468,6 +468,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy:
   - {fileID: 1711153933565486, guid: 367c4fab56896e641b4b4383c05e0035, type: 2}
+  - {fileID: 1536608451356956, guid: a64b4b1637e0d324cbb552e0cb20dd49, type: 2}
   born: 0
 --- !u!114 &114244734867339248
 MonoBehaviour:
@@ -493,6 +494,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy:
   - {fileID: 1711153933565486, guid: 367c4fab56896e641b4b4383c05e0035, type: 2}
+  - {fileID: 1536608451356956, guid: a64b4b1637e0d324cbb552e0cb20dd49, type: 2}
   born: 0
 --- !u!114 &114524900815686944
 MonoBehaviour:
