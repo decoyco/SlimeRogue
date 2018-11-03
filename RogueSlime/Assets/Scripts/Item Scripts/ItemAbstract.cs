@@ -38,9 +38,11 @@ public abstract class ItemAbstract : MonoBehaviour
         if (isMoveToTriggered)
         {
             Vector3 relative_position = locationToMoveTo - transform.position;
+            //TODO float mag = relative_position.magnitude/3;
             relative_position.Normalize();
 
-            transform.position += relative_position * Time.deltaTime * .1f * moveSpeed;
+
+            transform.position += relative_position * Time.deltaTime * .1f * moveSpeed; // * 1/(mag);
         }
 
     }
