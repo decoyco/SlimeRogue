@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//TODO make into interface
+
 public class AttractBubble : MonoBehaviour {
 
     public bool isEnabled;
@@ -12,15 +14,6 @@ public class AttractBubble : MonoBehaviour {
 	void Start () {
         isEnabled = false;
 	}
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (isFollowing && gameObjectToFollow != null)
-        {
-            gameObject.transform.position = gameObjectToFollow.transform.position;
-        }
-    }
 
     private void OnTriggerStay2D(Collider2D other)
     {
@@ -56,13 +49,16 @@ public class AttractBubble : MonoBehaviour {
     public void setGameObjectToFollow(GameObject obj)
     {
         gameObjectToFollow = obj;
+    }
+
+    public void startFollowing()
+    {
         isFollowing = true;
     }
 
     public void stopFollowing()
     {
         isFollowing = false;
-        gameObjectToFollow = null;
     }
-
+  
 }
