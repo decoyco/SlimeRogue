@@ -5,11 +5,22 @@ using UnityEngine;
 public class AttractBubble : MonoBehaviour {
 
     public bool isEnabled;
+    private GameObject gameObjectToFollow;
+    private bool isFollowing;
 
 	// Use this for initialization
 	void Start () {
         isEnabled = false;
 	}
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (isFollowing && gameObjectToFollow != null)
+        {
+            gameObject.transform.position = gameObjectToFollow.transform.position;
+        }
+    }
 
     private void OnTriggerStay2D(Collider2D other)
     {
@@ -42,11 +53,16 @@ public class AttractBubble : MonoBehaviour {
         }
     }
 
-    /*
-	// Update is called once per frame
-	void Update () {
-		
-	}
-    */
+    public void setGameObjectToFollow(GameObject obj)
+    {
+        gameObjectToFollow = obj;
+        isFollowing = true;
+    }
+
+    public void stopFollowing()
+    {
+        isFollowing = false;
+        gameObjectToFollow = null;
+    }
 
 }
