@@ -15,6 +15,15 @@ public class AttractBubble : MonoBehaviour {
         isEnabled = false;
 	}
 
+    // Called once every frame
+    void Update()
+    {
+        if (isFollowing && gameObjectToFollow != null)
+        {
+            gameObject.transform.position = gameObjectToFollow.transform.position;
+        }
+    }
+
     private void OnTriggerStay2D(Collider2D other)
     {
         //if the other is a Drop
