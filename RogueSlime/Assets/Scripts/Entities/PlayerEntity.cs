@@ -25,6 +25,7 @@ public class PlayerEntity : Entity {
         slowLast = 0f;
         sprite_extents = gameObject.GetComponent<SpriteRenderer>().sprite.bounds.extents;
         //Physics.IgnoreCollision(FindObjectsOfType<Entity>().GetComponent<Collider>(), GetComponent<Collider>());
+        spawnAttractBubble();
     }
 
     // Update is called once per frame

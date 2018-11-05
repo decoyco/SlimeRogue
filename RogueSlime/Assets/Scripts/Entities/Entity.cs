@@ -320,9 +320,11 @@ public class Entity : MonoBehaviour
 
     public void spawnAttractBubble()
     {
+        Debug.Log("Spawnbubble");
         if (attractBubble.GetComponent<AttractBubble>() != null)
         {
-            attractBubbleInstance = Instantiate(attractBubble, transform);
+            
+            attractBubbleInstance = Instantiate(attractBubble, gameObject.transform.position, Quaternion.identity);
             attractBubbleInstance.GetComponent<AttractBubble>().setGameObjectToFollow(gameObject);
             attractBubbleInstance.GetComponent<AttractBubble>().startFollowing();
         }
