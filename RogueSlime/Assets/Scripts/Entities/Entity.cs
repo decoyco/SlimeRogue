@@ -320,7 +320,7 @@ public class Entity : MonoBehaviour
 
     public void spawnAttractBubble()
     {
-        Debug.Log("Spawnbubble");
+        //Debug.Log("Spawnbubble");
         if (attractBubble.GetComponent<AttractBubble>() != null)
         {
             

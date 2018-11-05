@@ -4,7 +4,8 @@ using UnityEngine;
 
 public abstract class ItemAbstract : MonoBehaviour
 {
-    public float moveSpeed = 1;
+    public float moveSpeed = 1.2f;
+    public float acceleration = 10;
     private bool isMoveToTriggered = false;
     private Vector3 locationToMoveTo;
 
@@ -17,8 +18,6 @@ public abstract class ItemAbstract : MonoBehaviour
 
     public void moveTo(GameObject other)
     {
-        //NOTE MAY NEED TO UPDATE THIS INSTEAD OF JUST GETTING ONCE
-        //OR MAYBE CONTINUOUS CALLS WHEN IN RANGE ARE OK
         moveTo(other.transform.position);
     }
 
@@ -38,11 +37,10 @@ public abstract class ItemAbstract : MonoBehaviour
         if (isMoveToTriggered)
         {
             Vector3 relative_position = locationToMoveTo - transform.position;
-            //TODO float mag = relative_position.magnitude/3;
+            float mag = relative_position.magnitude;
             relative_position.Normalize();
 
-
-            transform.position += relative_position * Time.deltaTime * .1f * moveSpeed; // * 1/(mag);
+            transform.position += relative_position * Time.deltaTime * .1f * moveSpeed * 1/(mag + 1/(acceleration * 10));
         }
 
     }
