@@ -8,7 +8,7 @@ public class Projectile : Equip {
 
     public GameObject drop;
     public bool shreddable = false;
-    public int shootSpeed;
+    public float shootSpeed;
     public float despawnTime = 2.5f;
     public float hp_cost;
     Color slime_green = new Color(.557f, .792f, .322f, 1f);
@@ -40,10 +40,9 @@ public class Projectile : Equip {
                 angle *= Mathf.Deg2Rad;                                             //Converting to radians for cartesian conversion
                 velocity.x = magnitude * Mathf.Cos(angle);                                      //x = rcos(theta) [r = 1 because normalized]
                 velocity.y = magnitude * Mathf.Sin(angle);                                      //y"                                       "
-
-                velocity *= 2f;                                                   //scaling down magnitude
+                
                 GameObject dropInstance = Instantiate(drop, gameObject.transform.position, Quaternion.identity);
-                dropInstance.GetComponent<Rigidbody2D>().velocity = velocity;
+                dropInstance.GetComponent<Rigidbody2D>().velocity = velocity; 
             }
     }
 

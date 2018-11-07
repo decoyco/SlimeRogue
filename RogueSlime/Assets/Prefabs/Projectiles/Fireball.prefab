@@ -8,6 +8,10 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
+      propertyPath: effects.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: m_Radius
       value: 0.03
       objectReference: {fileID: 0}
@@ -27,6 +31,15 @@ Prefab:
       propertyPath: despawnTime
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: shootSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: effects.Array.data[0]
+      value: 
+      objectReference: {fileID: 1819552855143050, guid: e71548dc7504c204ea84e9fed1ec96da,
+        type: 2}
     m_RemovedComponents:
     - {fileID: 0}
   m_SourcePrefab: {fileID: 0}
@@ -128,9 +141,12 @@ MonoBehaviour:
   slow: 0
   burn: 1
   parentObeject: {fileID: 0}
+  effects:
+  - {fileID: 1819552855143050, guid: e71548dc7504c204ea84e9fed1ec96da, type: 2}
+  dropped: 0
   drop: {fileID: 1881796915770336, guid: 5972f0664447cfa4ca798904340ebc01, type: 2}
   shreddable: 0
-  shootSpeed: 25
+  shootSpeed: 0.5
   despawnTime: 10
   hp_cost: 2
 --- !u!212 &212219713218263554
@@ -166,7 +182,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2110033757
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6dc3193c3ca5ae1468cc59439d115014, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

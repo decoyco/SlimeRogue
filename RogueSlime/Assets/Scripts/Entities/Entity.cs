@@ -175,50 +175,12 @@ public class Entity : MonoBehaviour
                 healthPoints -= e.damage;
                 onDamage();
             }
-            applyStatus(e);
         }
     }
 
     public virtual void onDamage()
     {
     }
-
-    public void applyStatus(Equip e)
-    {
-        //effect if-statements
-        if (e.slow)
-        {
-            gameObject.GetComponent<Renderer>().material.color = Color.grey;
-            slowing = true;
-            slowLast = slowLast + 1.5f;
-            //turns on slow notifier
-            if (CompareTag("Player"))
-                FindObjectOfType<SlowIndicator>().indicate();
-            isSlowed();
-            Invoke("notSlowed", slowLast);
-        }
-        if (e.burn)
-        {
-            if (!burning)
-            {
-                burning = true;
-                Color orange = new Color(1f, 0.5f, 0f, 1f);
-                gameObject.GetComponent<Renderer>().material.color = orange;
-                //turns on UI burned notifier
-                if (CompareTag("Player"))
-                    FindObjectOfType<BurnIndicator>().indicate();
-                Invoke("isBurned", 0.5f);
-            }
-        }
-        if(!e.slow&&!e.burn)
-        {
-            //FLASH BLANK IF NO STATUS APPLIED
-            gameObject.GetComponent<Renderer>().material.color = Color.clear;
-            Invoke("revertColor", .1f);
-        }
-    }
-
-    
 
     public void revertColor()
     {
@@ -245,75 +207,12 @@ public class Entity : MonoBehaviour
         if (itemToDrop != null)
         {
             GameObject dp = Instantiate(itemToDrop, transform.position, Quaternion.identity);
-
-            //dp.GetComponent<SpriteRenderer>().sprite = itemToDrop.GetComponent<SpriteRenderer>().sprite;
-            //dp.GetComponent<Drop>().setItem(itemToDrop);
-
-            /*
-            //maybe add isRanged to non player entities later on
-            if (equip.gameObject.tag == "Weapon")
-                dp.GetComponent<Drop>().setIsRanged(false);
-            else if (equip.gameObject.tag == "Projectile")
-                dp.GetComponent<Drop>().setIsRanged(true);
-                */
-        }
-        /*else if (projectile != null && weapon == null)
-        {
-            debug.Log("Dropping " + projectile);
-            GameObject dp = Instantiate(dropContainer, transform.position, Quaternion.identity);
-            dp.GetComponent<SpriteRenderer>().sprite = projectile.GetComponent<SpriteRenderer>().sprite;
-            dp.GetComponent<Drop>().setEquip(this.projectile);
-            dp.GetComponent<Drop>().setIsRanged(true);
-        }*/
-        else
-        {
-            Debug.Log("Nother to drop!");
-        }
-
-    }
-
-    //status
-    // deal the burning damage
-    protected void isBurned()
-    {
-        healthPoints -= 1;
-        checkHealth();
-        float ran = Random.Range(0f, 1f);
-        if (ran <= 0.45f)
-        {   
-            //flash clear
-            gameObject.GetComponent<Renderer>().material.color = Color.clear;
-            //Turns off UI burned notifier
-            if (CompareTag("Player"))
-                FindObjectOfType<BurnIndicator>().deindicate();
-            Invoke("revertColor", .1f);
-            burning = false;
         }
         else
         {
-            Invoke("isBurned", 1f);
+            Debug.Log("Nothing to drop!");
         }
-    }
 
-    // moveSpeed becomes half when slowing
-    protected void isSlowed()
-    {
-        if (slowing == true)
-        {
-            moveSpeed = 0.5f * moveSpeed;
-            gameObject.GetComponent<Renderer>().material.color = Color.gray;
-        }
-    }
-
-    // reset the moveSpeed
-    protected void notSlowed()
-    {
-        moveSpeed = DEFAULT_SPEED;
-        Invoke("revertColor", .1f);
-        //turns off slowed notifier
-        if (CompareTag("Player"))
-            FindObjectOfType<SlowIndicator>().deindicate();
-        slowing = false;
     }
 
     public bool getIsRanged()

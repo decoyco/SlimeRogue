@@ -8,6 +8,10 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
+      propertyPath: effects.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: m_Offset.x
       value: 0
       objectReference: {fileID: 0}
@@ -23,6 +27,15 @@ Prefab:
       propertyPath: hp_cost
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: shootSpeed
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: effects.Array.data[0]
+      value: 
+      objectReference: {fileID: 1525569986703264, guid: 402e33538e55e6d409498470126c162a,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1281505496764710}
@@ -112,9 +125,12 @@ MonoBehaviour:
   slow: 1
   burn: 0
   parentObeject: {fileID: 0}
+  effects:
+  - {fileID: 1525569986703264, guid: 402e33538e55e6d409498470126c162a, type: 2}
+  dropped: 0
   drop: {fileID: 1881796915770336, guid: 5972f0664447cfa4ca798904340ebc01, type: 2}
   shreddable: 0
-  shootSpeed: 65
+  shootSpeed: 2.5
   despawnTime: 2.5
   hp_cost: 1
 --- !u!114 &114466696028174064
@@ -161,7 +177,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2110033757
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 960236a13b53d3743a45c32f8ca933ec, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

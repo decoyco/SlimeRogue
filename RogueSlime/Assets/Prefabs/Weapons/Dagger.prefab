@@ -75,7 +75,7 @@ MonoBehaviour:
   slow: 0
   burn: 0
   parentObeject: {fileID: 0}
-  dashSpeed: 0
+  effects: []
 --- !u!212 &212558433846700406
 SpriteRenderer:
   m_ObjectHideFlags: 1

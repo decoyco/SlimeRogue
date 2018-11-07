@@ -102,12 +102,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccc9a8959e568d74599ada6b00d7681e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coolDown: 0
+  coolDown: 0.75
   damage: 1
   isSlime: 0
   slow: 0
   burn: 0
   parentObeject: {fileID: 0}
+  effects: []
 --- !u!212 &212335795144441088
 SpriteRenderer:
   m_ObjectHideFlags: 1

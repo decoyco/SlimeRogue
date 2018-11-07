@@ -44,7 +44,7 @@ public class RangeAttack : MonoBehaviour, AttackType
         GameObject bullet = Instantiate(objToSpawn, (posToShoot * spawnDist) + posShootOrigin, getProjectileRotation(posToShoot, rotationOffest));
 
         //Sets velocity of laser equal to unit vector of enemy > player multiplied by deltaTime and laser speed
-        bullet.GetComponent<Rigidbody2D>().velocity = new Vector3(posToShoot.x * Time.deltaTime * velocity, posToShoot.y * Time.deltaTime * velocity, relative_position.z);
+        bullet.GetComponent<Rigidbody2D>().velocity = new Vector3(posToShoot.x * velocity, posToShoot.y * velocity, relative_position.z);
 
         if (transform.parent.gameObject.layer == 9)
         { 
