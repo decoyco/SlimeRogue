@@ -6,6 +6,7 @@ public class Entity : MonoBehaviour
 {
     protected GameObject weaponInstance;
     protected GameObject secondWeaponInstance;
+    protected GameObject attractBubbleInstance;
 
     protected GameObject hpSliderInstance;
     protected bool isRanged;
@@ -17,6 +18,7 @@ public class Entity : MonoBehaviour
     public GameObject secondEquip;
     public GameObject itemToDrop;
     public GameObject HP_slider;
+    public GameObject attractBubble;
 
     public Vector3 targetVector;
     protected bool shouldTargetUpdate = true;
@@ -314,6 +316,23 @@ public class Entity : MonoBehaviour
         if (CompareTag("Player"))
             FindObjectOfType<SlowIndicator>().deindicate();
         slowing = false;
+    }
+
+    public void spawnAttractBubble()
+    {
+        //Debug.Log("Spawnbubble");
+        if (attractBubble.GetComponent<AttractBubble>() != null)
+        {
+            
+            attractBubbleInstance = Instantiate(attractBubble, gameObject.transform.position, Quaternion.identity);
+            attractBubbleInstance.GetComponent<AttractBubble>().setGameObjectToFollow(gameObject);
+            attractBubbleInstance.GetComponent<AttractBubble>().startFollowing();
+            Debug.Log(attractBubbleInstance.GetComponent<AttractBubble>().getRadius());
+        }
+        else
+        {
+            Debug.Log(gameObject + " could not spawn " + attractBubble + ": has no AttractBubble class");
+        }
     }
 
     public bool getIsRanged()

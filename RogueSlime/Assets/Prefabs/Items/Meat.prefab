@@ -70,6 +70,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 095fdc890dd127e41a150f1c6fa5b379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 1.2
+  acceleration: 10
+  isAttractable: 1
   healthToGain: 5
   meater: {fileID: 0}
 --- !u!198 &198416815033279422

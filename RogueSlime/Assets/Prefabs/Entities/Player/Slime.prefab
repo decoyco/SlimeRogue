@@ -119,6 +119,8 @@ MonoBehaviour:
     type: 2}
   itemToDrop: {fileID: 0}
   HP_slider: {fileID: 0}
+  attractBubble: {fileID: 1953070930343350, guid: 19a6facd29f2bbb458d0390b201e1f3c,
+    type: 2}
   targetVector: {x: 0, y: 0, z: 0}
   max_health: 5
   healthPoints: 5
@@ -204,6 +206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entity: {fileID: 0}
+  acting: 0
 --- !u!114 &114944336853388566
 MonoBehaviour:
   m_ObjectHideFlags: 1
