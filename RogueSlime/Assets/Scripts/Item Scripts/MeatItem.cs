@@ -10,6 +10,7 @@ public class MeatItem : ItemAbstract  {
     private void Start()
     {
         meater = FindObjectOfType<MEATer>();
+        checkValidSetUp();
     }
 
     public override void onPickupAction(Entity other)

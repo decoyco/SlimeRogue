@@ -6,6 +6,7 @@ public class SlimeDrop : ItemAbstract {
     void Start()
     {
         Invoke("stop", Random.Range(.02f, .09f));
+        checkValidSetUp();
     }
     public  override void onPickupAction(Entity other)
     {
