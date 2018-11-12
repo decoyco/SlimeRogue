@@ -13,11 +13,12 @@ public abstract class ItemAbstract : MonoBehaviour
 
     public abstract void onPickupAction(Entity other);
 
-    public void Start()
+    protected void checkValidSetUp()
     {
+        Debug.Log("item start");
         if (gameObject.GetComponent<Rigidbody2D>() == null)
         {
-            Debug.LogWarning(gameObject + "does not have a RigidBody2D and is an item. Add one to enable attracting and collisions");
+            Debug.LogWarning(gameObject + "does not have a RigidBody2D and is an ItemAbstract. Add one to enable attracting and collisions");
             isAttractable = false;
         }
     }
