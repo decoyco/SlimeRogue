@@ -48,11 +48,13 @@ public class AttractBubble : MonoBehaviour {
 
     /**
      * Is other an Item/Drop check
+     * NOTE: move speed is in ItemAbstract.cs May need to move here instead.
      */
     public void hitDrop(Collider2D other)
     {
         ItemAbstract item = other.gameObject.GetComponent<ItemAbstract>();
-        if (item != null && isEnabled)
+        
+        if (item != null && isEnabled && item.isAttractable)
         {
             item.moveTo(gameObject);
         }
@@ -64,7 +66,7 @@ public class AttractBubble : MonoBehaviour {
     public void exitDrop(Collider2D other)
     {
         ItemAbstract item = other.gameObject.GetComponent<ItemAbstract>();
-        if (item != null && isEnabled)
+        if (item != null && isEnabled && item.isAttractable)
         {
             item.stopMoveTo();
         }
@@ -88,17 +90,17 @@ public class AttractBubble : MonoBehaviour {
     /**
      * Expands the bubble to a specified size (large for full room)
      */
-    public void expand(float s)
+    public void setRadius(float s)
     {
         gameObject.GetComponent<CircleCollider2D>().radius = s;
     }
 
     /**
-     * Reverts the bubble to default size
+     * Gets the bubble's radius 
      */
-    public void retract()
+    public float getRadius()
     {
-        gameObject.GetComponent<CircleCollider2D>().radius = defaultSize;
+        return gameObject.GetComponent<CircleCollider2D>().radius;
     }
-    
+
 }
