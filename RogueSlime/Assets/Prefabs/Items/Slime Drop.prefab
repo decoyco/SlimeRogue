@@ -99,8 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c541b9e108c2bd4eb6cabadfaf4222b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1.2
-  acceleration: 10
+  moveSpeed: 0.6
+  acceleration: 2
   isAttractable: 1
 --- !u!212 &212080909279803718
 SpriteRenderer:
