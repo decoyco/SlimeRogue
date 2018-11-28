@@ -53,5 +53,6 @@ public class RightClickSlider : MonoBehaviour {
     public void updateValue(float v)
     {
         slider.value = v;
+        Debug.Log(slider.value);
     }
 }

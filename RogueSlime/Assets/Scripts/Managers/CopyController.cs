@@ -27,7 +27,7 @@ public class CopyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //slider_value = right_click.GetComponent<RightClickSlider>().slider.value;
+        slider_value = right_click.GetComponent<RightClickSlider>().slider.value;
         EmptyFill();
         
     }
